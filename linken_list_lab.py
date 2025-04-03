@@ -258,29 +258,14 @@ def display(self):
     
     return result + "None"
 
-def test_linked_list():
-    """Prueba la implementación de LinkedList con operaciones básicas."""
-    my_list = LinkedList()
-    print("Lista creada:")
-    print(f"Lista: {my_list.display()}")
-    print(f"Tamaño: {my_list.list_length()}")
 
-    # Pruebas de inserción
-    print("\nInsertando nodos:")
-    my_list.insert_at_beginning(5)
-    print(f"Después de insert_at_beginning(5): {my_list.display()}")
+my_list = LinkedList()
+my_list.insert_at_beginning(5)
+my_list.insert_at_beginning(10)
+my_list.insert_at_end(20)
+my_list.insert_at_position(1, 15)
+print(my_list.display())
 
-    my_list.insert_at_beginning(10)
-    print(f"Después de insert_at_beginning(10): {my_list.display()}")
-
-    my_list.insert_at_end(20)
-    print(f"Después de insert_at_end(20): {my_list.display()}")
-
-    my_list.insert_at_position(1, 15)
-    print(f"Después de insert_at_position(1, 15): {my_list.display()}")
-
-if __name__ == "__main__":
-    test_linked_list()
 
 #Ejercicio2
 from linked_list_lab import LinkedList
@@ -339,6 +324,7 @@ print(f"Lista después de insertar 30 al principio: {my_list.display()}")  # Deb
 print(f"Longitud de la lista después de insertar 30: {my_list.list_length()}")  # Debería imprimir 3
 
 #Ejercicio4
+from linked_list_lab import LinkedList,Node
 def insert_at_end(self, data):
     """Insert a new node with data at the end of the list."""
     new_node = Node(data)
@@ -356,6 +342,12 @@ def insert_at_end(self, data):
     
     self.length += 1
     return True
+my_list = LinkedList()
+my_list.insert_at_beginning(1)
+my_list.insert_at_beginning(2)
+my_list.insert_at_beginning(3)
+my_list.insert_at_end(10)
+print(my_list.display())
 
 #Ejercicio5
 def insert_at_position(self, position, data):
@@ -389,6 +381,7 @@ def insert_at_position(self, position, data):
     return True
 
 #Ejercicio6
+from linked_list_lab import LinkedList,Node
 def delete_from_beginning(self):
     """Delete and return the data from the first node."""
     if self.head is None:
@@ -400,7 +393,23 @@ def delete_from_beginning(self):
     
     return data
 
+my_list = LinkedList()
+my_list.insert_at_beginning(1)
+my_list.insert_at_beginning(2)
+my_list.insert_at_beginning(3)
+my_list.insert_at_position(1, 15)
+my_list.insert_at_position(2, 20)
+print(my_list.display())
+
+#print("\nEliminando nodos:")
+#deleted = my_list.delete_from_beginning()
+#print(f"Eliminado del inicio: {deleted}, Lista: {my_list.display()}")
+deleted = my_list.delete_from_position(2)
+print(f"Eliminado en posición 2: {deleted}, Lista: {my_list.display()}")
+
+
 #Ejercicio7 
+from linked_list_lab import LinkedList,Node
 def delete_from_end(self):
     """Delete and return the data from the last node."""
     if self.head is None:
@@ -424,6 +433,21 @@ def delete_from_end(self):
     self.length -= 1
     
     return data
+
+my_list = LinkedList()
+my_list.insert_at_beginning(1)
+my_list.insert_at_beginning(2)
+my_list.insert_at_beginning(3)
+my_list.insert_at_position(1, 15)
+my_list.insert_at_position(2, 20)
+print(my_list.display())
+
+
+deleted = my_list.delete_from_end()
+print(f"Eliminado del final: {deleted}, Lista: {my_list.display()}")
+
+
+
 
 #Ejercicio8
 def delete_from_position(self, position):
