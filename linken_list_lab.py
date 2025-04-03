@@ -243,6 +243,7 @@ if __name__ == "__main__":
 
 
 #Ejercicio 1
+from linked_list_lab import LinkedList
 def display(self):
     """Return a string representation of the linked list."""
     if self.head is None:
@@ -256,6 +257,30 @@ def display(self):
         current = current.get_next()
     
     return result + "None"
+
+def test_linked_list():
+    """Prueba la implementación de LinkedList con operaciones básicas."""
+    my_list = LinkedList()
+    print("Lista creada:")
+    print(f"Lista: {my_list.display()}")
+    print(f"Tamaño: {my_list.list_length()}")
+
+    # Pruebas de inserción
+    print("\nInsertando nodos:")
+    my_list.insert_at_beginning(5)
+    print(f"Después de insert_at_beginning(5): {my_list.display()}")
+
+    my_list.insert_at_beginning(10)
+    print(f"Después de insert_at_beginning(10): {my_list.display()}")
+
+    my_list.insert_at_end(20)
+    print(f"Después de insert_at_end(20): {my_list.display()}")
+
+    my_list.insert_at_position(1, 15)
+    print(f"Después de insert_at_position(1, 15): {my_list.display()}")
+
+if __name__ == "__main__":
+    test_linked_list()
 
 #Ejercicio2
 def list_length(self):
