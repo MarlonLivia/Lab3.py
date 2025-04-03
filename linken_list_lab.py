@@ -283,18 +283,28 @@ if __name__ == "__main__":
     test_linked_list()
 
 #Ejercicio2
-def list_length(self):
-    """Count and return the number of nodes in the list."""
-    count = 0
-    current = self.head
-    
-    while current is not None:
-        count += 1
-        current = current.get_next()
-    
-    return count
+from linked_list_lab import LinkedList
+
+# Crear una instancia de LinkedList
+my_list = LinkedList()
+
+# Verificar el tamaño de la lista al principio (debe ser 0)
+print(f"Longitud inicial de la lista: {my_list.list_length()}")
+
+# Pruebas de inserción
+print("\nInsertando nodos:")
+my_list.insert_at_beginning(5)
+my_list.insert_at_beginning(10)
+my_list.insert_at_beginning(30)
+my_list.insert_at_beginning(25)
+my_list.insert_at_end(20)
+
+
+# Verificar el tamaño después de insertar elementos
+print(f"Longitud después de agregar elementos: {my_list.list_length()}")
 
 #Ejercicio3
+from linked_list_lab import LinkedList
 def insert_at_beginning(self, data):
     """Insert a new node with data at the beginning of the list."""
     new_node = Node(data)
@@ -307,6 +317,26 @@ def insert_at_beginning(self, data):
     
     self.length += 1
     return True
+
+my_list = LinkedList()
+
+# Verificar el tamaño de la lista al principio (debe ser 0)
+print(f"Longitud inicial de la lista: {my_list.list_length()}")  # Debería imprimir 0
+
+# Insertar un elemento al principio
+my_list.insert_at_beginning(10)
+print(f"Lista después de insertar 10 al principio: {my_list.display()}")  # Debería imprimir 10 -> None
+print(f"Longitud de la lista después de insertar 10: {my_list.list_length()}")  # Debería imprimir 1
+
+# Insertar otro elemento al principio
+my_list.insert_at_beginning(20)
+print(f"Lista después de insertar 20 al principio: {my_list.display()}")  # Debería imprimir 20 -> 10 -> None
+print(f"Longitud de la lista después de insertar 20: {my_list.list_length()}")  # Debería imprimir 2
+
+# Insertar otro elemento al principio
+my_list.insert_at_beginning(30)
+print(f"Lista después de insertar 30 al principio: {my_list.display()}")  # Debería imprimir 30 -> 20 -> 10 -> None
+print(f"Longitud de la lista después de insertar 30: {my_list.list_length()}")  # Debería imprimir 3
 
 #Ejercicio4
 def insert_at_end(self, data):
